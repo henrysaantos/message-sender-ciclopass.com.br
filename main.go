@@ -70,7 +70,7 @@ func main() {
 		go func() {
 			for evt := range qrChan {
 				if evt.Event == "code" {
-					qrterminal.Generate(evt.Code, qrterminal.L, os.Stdout)
+					qrterminal.GenerateHalfBlock(evt.Code, qrterminal.L, os.Stdout)
 					log.Println("➡️ Escaneie o QR Code acima com seu WhatsApp")
 				} else {
 					log.Printf("Evento QR: %v", evt.Event)
